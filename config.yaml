@@ -1,0 +1,15 @@
+proxies:
+  - name: DMIT-VPS-8443
+    type: socks5
+    server: 154.17.19.109
+    port: 8443
+    skip-cert-verify: true
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - DMIT-VPS-8443
+
+rules:
+  - MATCH,Proxy
